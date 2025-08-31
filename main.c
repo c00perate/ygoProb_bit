@@ -45,9 +45,9 @@ Possibility possibilities[MAX_POSSIBILITIES];
 uint64_t possibility_required_masks[MAX_POSSIBILITIES];
 int desires_id = -1, extrav_id = -1, upstart_id = -1, prosperity_id = -1, duality_id = -1;
 int num_possibilities = 0;
-int deck_size = 40;
+int deck_size;
 int hand_size = 5;
-int num_trials = 1000000;
+int num_trials = 10000000;
 
 int get_card_id(const char* name);
 void add_cards_to_deck(Deck* deck, const char* card_name, int copies);
@@ -301,9 +301,8 @@ int main() {
     Deck deck;
     deck.size = 0;
 
-    int deckCount = 0;
     printf("Enter deck count: ");
-    scanf("%d", &deckCount);
+    scanf("%d", &deck_size);
 
     FILE *pDeck = fopen("deck.txt", "r");
     if (pDeck == NULL) {
@@ -318,7 +317,7 @@ int main() {
     }
     fclose (pDeck);
 
-    add_cards_to_deck(&deck, "blank", deckCount-deck.size);
+    add_cards_to_deck(&deck, "blank", deck_size-deck.size);
 
     desires_id = get_card_id("Desires");
     extrav_id = get_card_id("Extravagance");
