@@ -9,8 +9,10 @@
 #define MAX_EXTRAS_SIZE 15
 #define MAX_CARD_NAME 50
 #define MAX_CARDS 60
-#define MAX_CONDITIONS 20
-#define MAX_POSSIBILITIES 20
+#define MAX_CONDITIONS 150
+#define MAX_POSSIBILITIES 150
+#define DECKLIST "deckVW.txt"
+#define COMBOS "comboVW.txt"
 
 typedef struct {
     int card_id;
@@ -304,7 +306,7 @@ int main() {
     printf("Enter deck count: ");
     scanf("%d", &deck_size);
 
-    FILE *pDeck = fopen("deck.txt", "r");
+    FILE *pDeck = fopen(DECKLIST, "r");
     if (pDeck == NULL) {
         printf("Decklist not found!");
         return 1;
@@ -325,7 +327,7 @@ int main() {
     prosperity_id = get_card_id("Prosperity");
     duality_id = get_card_id("Duality");
 
-    parse_combos_from_file("combo.txt");
+    parse_combos_from_file(COMBOS);
 
     int successes = 0;
     clock_t start = clock();
