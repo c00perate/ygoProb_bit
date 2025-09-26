@@ -11,8 +11,8 @@
 #define MAX_CARDS 60
 #define MAX_CONDITIONS 150
 #define MAX_POSSIBILITIES 150
-#define DECKLIST "deckVW.txt"
-#define COMBOS "comboVW.txt"
+#define DECKLIST "roseDeck.txt"
+#define COMBOS "roseCombo.txt"
 
 typedef struct {
     int card_id;

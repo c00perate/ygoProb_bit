@@ -2,7 +2,7 @@ lulu 3
 lili 3
 jiji 3
 lao 3
-nyan 1
+nyan 2
 toutou 0
 etele 0
 city 3
@@ -14,7 +14,7 @@ xuanwu 0
 emergence 0
 taia 0
 smallWorld 3
-nengine 7
+nengine 4
 rite 0
 semen 0
 ogre 0
